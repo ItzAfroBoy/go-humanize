@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/dustin/go-humanize"
+	"github.com/ItzAfroBoy/go-humanize"
 )
 
 func FuzzComma(f *testing.F) {
