@@ -19,6 +19,17 @@ Example:
 fmt.Printf("That file is %s.", humanize.Bytes(82854982)) // That file is 83 MB.
 ```
 
+## Speeds
+
+This lets you take numbers like `82854982` and convert them to useful
+strings like, `83 MB/s` or ` Mbps` (whichever you prefer).
+
+Example:
+
+```go
+fmt.Printf("That file is %s.", humanize.Bytes(82854982)) // That file is 83 MB.
+```
+
 ## Times
 
 This lets you take a `time.Time` and spit it out in relative terms.

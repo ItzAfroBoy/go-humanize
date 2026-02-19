@@ -91,6 +91,26 @@ func humanateBytes(s uint64, base float64, minDigits int, sizes []string) string
 	return fmt.Sprintf(f, val, suffix)
 }
 
+// BytesSpeed produces a human-readable representation of an SI size in bytes per second.
+//
+// BytesSpeed(82854982) -> 82.9 MB/s
+//
+// See also: BitsSpeed.
+func BytesSpeed(s uint64) string {
+	sizes := []string{"B/s", "kB/s", "MB/s", "GB/s", "TB/s", "PB/s", "EB/s"}
+	return humanateBytes(s, 1000, 3, sizes)
+}
+
+// BitsSpeed produces a human-readable representation of an SI speed in bits per second.
+//
+// BitsSpeed(82854982) -> 662.8 Mbps
+//
+// See also: BytesSpeed.
+func BitsSpeed(s uint64) string {
+	sizes := []string{"bps", "kbps", "Mbps", "Gbps", "Tbps", "Pbps", "Ebps"}
+	return humanateBytes(s*8, 1000, 3, sizes)
+}
+
 // Bytes produces a human-readable representation of an SI size.
 //
 // See also: ParseBytes.
